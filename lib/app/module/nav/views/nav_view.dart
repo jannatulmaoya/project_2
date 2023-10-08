@@ -7,8 +7,14 @@ class NavView extends GetView<Navcontroller> {
 //commit
   @override
   Widget build(BuildContext context) {
+    Get.put(Navcontroller());
     return Scaffold(
+      body: Obx(() => controller.listName[controller.index.value]),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (Value) {
+          CurrentIndex:
+          controller.ChengeIndex(Value);
+        },
         showUnselectedLabels: true,
         items: [
           BottomNavigationBarItem(
